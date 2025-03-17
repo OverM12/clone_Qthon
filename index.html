@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEA Quantathon 2025</title>
+    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/atari/images/public/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .bg-purple-primary {
+            background-color: #673ab7;
+        }
+
+        .text-purple-primary {
+            color: #673ab7;
+        }
+
+        .hover\:bg-purple-dark:hover {
+            background-color: #5e35b1;
+        }
+
+        .hover\:text-purple-primary:hover {
+            color: #673ab7;
+        }
+
+        .bg-dark-purple {
+            background-color: #1a0033;
+        }
+
+        body {
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            @apply text-gray-700 hover:text-purple-600 font-medium;
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .mobile-link {
+            @apply block px-3 py-2 text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50;
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        p,
+        li,
+        a {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white">
+        <div class="fixed w-full bg-white z-50 shadow-md">
+            <div class="mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo and brand -->
+                    <div class="flex items-center">
+                        <!-- Mobile menu button moved to left -->
+                        <button
+                            class="md:hidden text-purple-primary hover:text-purple-dark transition-colors duration-300 mr-4"
+                            id="mobile-menu-button" aria-label="Toggle menu">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                        <a href="index.html" class="flex items-center">
+                            <img src="images/logo-icon.png" alt="SEA-Qthon 2025" class="h-10">
+                            <span class="ml-2 font-semibold">SEA-Qthon 2025</span>
+                        </a>
+                    </div>
+
+                    <!-- Main Navigation -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <nav class="flex items-center space-x-6">
+                            <a href="index.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 font-bold">Home</a>
+                            <a href="event-details.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300">Event
+                                Details</a>
+                            <a href="register.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300">Register</a>
+                            <a href="program-committee.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 nav-item-collapsible program-committee-link">Program
+                                Committee</a>
+                            <a href="partners.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 nav-item-collapsible partners-link">Our
+                                Partners</a>
+                            <a href="sponsors.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 nav-item-collapsible sponsors-link">Sponsors</a>
+                            <a href="qtic.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 nav-item-collapsible qtric-link">QTRiC</a>
+                            <a href="news.html"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300 nav-item-collapsible news-link">News
+                                and Media</a>
+                            <div class="relative nav-more-button hidden">
+                                <button id="more-menu-button"
+                                    class="nav-link hover:text-purple-primary transition-colors duration-300">
+                                    More <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                </button>
+                                <div id="more-dropdown"
+                                    class="absolute hidden bg-white shadow-lg rounded-md py-2 w-48 right-0 mt-1 z-50">
+                                    <a href="program-committee.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-primary dropdown-program-committee hidden">Program
+                                        Committee</a>
+                                    <a href="partners.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-primary dropdown-partners hidden">Our
+                                        Partners</a>
+                                    <a href="sponsors.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-primary dropdown-sponsors hidden">Sponsors</a>
+                                    <a href="qtic.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-primary dropdown-qtric hidden">QTRiC</a>
+                                    <a href="news.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-primary dropdown-news hidden">News
+                                        and Media</a>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="relative">
+                            <button id="search-button"
+                                class="nav-link hover:text-purple-primary transition-colors duration-300">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div id="search-modal"
+                                class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+                                <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-2xl mx-4">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h3 class="text-xl font-bold">Search</h3>
+                                        <button id="close-search" class="text-gray-500 hover:text-gray-700">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="text" id="search-input"
+                                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-primary"
+                                            placeholder="Search across the entire website...">
+                                        <div id="search-suggestions"
+                                            class="hidden absolute top-full left-0 right-0 bg-white mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto p-2">
+                                            <!-- Search suggestions will appear here as user types -->
+                                        </div>
+                                        <div id="search-results" class="mt-4 hidden">
+                                            <h4 class="font-semibold mb-2">Search Results:</h4>
+                                            <ul class="space-y-2" id="results-list">
+                                                <!-- Results will be populated here -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button id="clear-search"
+                                            class="px-4 py-2 text-gray-600 hover:text-purple-primary">
+                                            Clear Results
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    const searchButton = document.getElementById('search-button');
+                                    const searchModal = document.getElementById('search-modal');
+                                    const closeSearch = document.getElementById('close-search');
+                                    const searchInput = document.getElementById('search-input');
+                                    const searchSuggestions = document.getElementById('search-suggestions');
+                                    const searchResults = document.getElementById('search-results');
+                                    const resultsList = document.getElementById('results-list');
+                                    const clearSearch = document.getElementById('clear-search');
+
+                                    // Website content to search through
+                                    const websiteContent = {
+                                        'Home': {
+                                            url: 'index.html',
+                                            content: 'SEA Quantathon 2025 quantum computing hackathon event details registration'
+                                        },
+                                        'Event Details': {
+                                            url: 'event-details.html',
+                                            content: 'Event schedule program timeline workshops training sessions'
+                                        },
+                                        'Register': {
+                                            url: 'register.html',
+                                            content: 'Registration form sign up participate application'
+                                        },
+                                        'Program Committee': {
+                                            url: 'program-committee.html',
+                                            content: 'Organizing committee members experts advisors'
+                                        },
+                                        'Partners': {
+                                            url: 'partners.html',
+                                            content: 'Collaboration organizations institutions supporters'
+                                        },
+                                        'Sponsors': {
+                                            url: 'sponsors.html',
+                                            content: 'Supporting companies organizations funding'
+                                        },
+                                        'QTRiC': {
+                                            url: 'qtic.html',
+                                            content: 'Quantum Technology Research and Innovation Center'
+                                        },
+                                        'News': {
+                                            url: 'news.html',
+                                            content: 'Latest updates announcements media coverage press releases'
+                                        }
+                                    };
+
+                                    // Toggle search modal
+                                    searchButton.addEventListener('click', () => {
+                                        searchModal.classList.remove('hidden');
+                                        searchInput.focus();
+                                    });
+
+                                    closeSearch.addEventListener('click', () => {
+                                        searchModal.classList.add('hidden');
+                                        clearSearchResults();
+                                    });
+
+                                    // Close on outside click
+                                    searchModal.addEventListener('click', (e) => {
+                                        if (e.target === searchModal) {
+                                            searchModal.classList.add('hidden');
+                                            clearSearchResults();
+                                        }
+                                    });
+
+                                    // Search functionality
+                                    searchInput.addEventListener('input', debounce(() => {
+                                        const query = searchInput.value.toLowerCase().trim();
+
+                                        if (query.length < 2) {
+                                            searchSuggestions.classList.add('hidden');
+                                            searchResults.classList.add('hidden');
+                                            return;
+                                        }
+
+                                        const results = Object.entries(websiteContent)
+                                            .filter(([title, data]) => {
+                                                return title.toLowerCase().includes(query) ||
+                                                    data.content.toLowerCase().includes(query);
+                                            })
+                                            .map(([title, data]) => ({
+                                                title,
+                                                url: data.url,
+                                                preview: data.content
+                                            }));
+
+                                        displayResults(results);
+                                    }, 300));
+
+                                    // Clear search results
+                                    clearSearch.addEventListener('click', clearSearchResults);
+
+                                    // Helper functions
+                                    function displayResults(results) {
+                                        resultsList.innerHTML = '';
+
+                                        if (results.length === 0) {
+                                            resultsList.innerHTML = '<li class="text-gray-500">No results found</li>';
+                                        } else {
+                                            results.forEach(result => {
+                                                const li = document.createElement('li');
+                                                li.innerHTML = `
+                                                    <a href="${result.url}" class="block p-2 hover:bg-gray-100 rounded">
+                                                        <div class="font-medium text-purple-primary">${result.title}</div>
+                                                        <div class="text-sm text-gray-600">${getPreviewText(result.preview)}</div>
+                                                    </a>
+                                                `;
+                                                resultsList.appendChild(li);
+                                            });
+                                        }
+
+                                        searchResults.classList.remove('hidden');
+                                    }
+
+                                    function clearSearchResults() {
+                                        searchInput.value = '';
+                                        searchSuggestions.classList.add('hidden');
+                                        searchResults.classList.add('hidden');
+                                        resultsList.innerHTML = '';
+                                    }
+
+                                    function getPreviewText(text, maxLength = 100) {
+                                        return text.length > maxLength
+                                            ? text.substring(0, maxLength) + '...'
+                                            : text;
+                                    }
+
+                                    function debounce(func, wait) {
+                                        let timeout;
+                                        return function executedFunction(...args) {
+                                            const later = () => {
+                                                clearTimeout(timeout);
+                                                func(...args);
+                                            };
+                                            clearTimeout(timeout);
+                                            timeout = setTimeout(later, wait);
+                                        };
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu - Redesigned to match the second image -->
+        <div id="mobile-menu" class="hidden md:hidden fixed left-0 top-0 h-full w-1/2 bg-gray-800 bg-opacity-95 z-50">
+            <div class="p-4">
+                <button id="close-menu-button" class="text-white hover:text-purple-primary float-left">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="px-4 pt-6 pb-3">
+                <div class="space-y-6" id="menu-items">
+                    <a href="index.html"
+                        class="block text-lg text-white hover:text-purple-primary font-medium font-bold">Home</a>
+                    <a href="event-details.html" class="block text-lg text-white hover:text-purple-primary">Event
+                        Details</a>
+                    <a href="register.html" class="block text-lg text-white hover:text-purple-primary">Register</a>
+                    <a href="program-committee.html" class="block text-lg text-white hover:text-purple-primary">Program
+                        Committee</a>
+                    <a href="partners.html" class="block text-lg text-white hover:text-purple-primary">Our Partners</a>
+                    <a href="sponsors.html" class="block text-lg text-white hover:text-purple-primary">Sponsors</a>
+                    <a href="qtic.html" class="block text-lg text-white hover:text-purple-primary">QTRiC</a>
+                    <a href="news.html" class="block text-lg text-white hover:text-purple-primary">News and Media</a>
+                    <div class="relative">
+                        <!-- Mobile search button -->
+                        <button id="mobile-search-button"
+                            class="block text-lg text-white hover:text-purple-primary mb-6">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+
+                        <!-- Mobile search modal -->
+                        <div id="mobile-search-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-95 z-50">
+                            <div class="h-full flex flex-col">
+                                <!-- Search header -->
+                                <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                                    <h3 class="text-xl font-bold text-white">Search</h3>
+                                    <button id="mobile-close-search" class="text-white hover:text-purple-primary">
+                                        <i class="fas fa-times text-2xl"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Search input area -->
+                                <div class="p-4 flex-1">
+                                    <div class="relative">
+                                        <input type="text" id="mobile-search-input"
+                                            class="w-full px-4 py-3 bg-gray-700 text-white border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-primary"
+                                            placeholder="Search website...">
+
+                                        <!-- Search suggestions -->
+                                        <div id="mobile-search-suggestions"
+                                            class="hidden absolute w-full bg-gray-700 mt-2 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                                        </div>
+
+                                        <!-- Search results -->
+                                        <div id="mobile-search-results" class="mt-6 hidden">
+                                            <h4 class="font-semibold mb-3 text-white">Results:</h4>
+                                            <ul class="space-y-4" id="mobile-results-list">
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Clear button -->
+                                    <div class="mt-4">
+                                        <button id="mobile-clear-search"
+                                            class="w-full py-3 text-white hover:text-purple-primary border border-gray-600 rounded-lg">
+                                            Clear Results
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const searchButton = document.getElementById('mobile-search-button');
+                                const searchModal = document.getElementById('mobile-search-modal');
+                                const closeSearch = document.getElementById('mobile-close-search');
+                                const searchInput = document.getElementById('mobile-search-input');
+                                const searchResults = document.getElementById('mobile-search-results');
+                                const resultsList = document.getElementById('mobile-results-list');
+                                const clearSearch = document.getElementById('mobile-clear-search');
+
+                                // Website content to search through
+                                const websiteContent = {
+                                    'Home': {
+                                        url: 'index.html',
+                                        content: 'SEA Quantathon 2025 quantum computing hackathon event details registration'
+                                    },
+                                    'Event Details': {
+                                        url: 'event-details.html',
+                                        content: 'Event schedule program timeline workshops training sessions'
+                                    },
+                                    'Register': {
+                                        url: 'register.html',
+                                        content: 'Registration form sign up participate application'
+                                    },
+                                    'Program Committee': {
+                                        url: 'program-committee.html',
+                                        content: 'Organizing committee members experts advisors'
+                                    },
+                                    'Partners': {
+                                        url: 'partners.html',
+                                        content: 'Collaboration organizations institutions supporters'
+                                    },
+                                    'Sponsors': {
+                                        url: 'sponsors.html',
+                                        content: 'Supporting companies organizations funding'
+                                    },
+                                    'QTRiC': {
+                                        url: 'qtic.html',
+                                        content: 'Quantum Technology Research and Innovation Center'
+                                    },
+                                    'News': {
+                                        url: 'news.html',
+                                        content: 'Latest updates announcements media coverage press releases'
+                                    }
+                                };
+
+                                // Toggle search modal
+                                searchButton.addEventListener('click', () => {
+                                    searchModal.classList.remove('hidden');
+                                    searchInput.focus();
+                                    document.body.style.overflow = 'hidden';
+                                });
+
+                                closeSearch.addEventListener('click', () => {
+                                    searchModal.classList.add('hidden');
+                                    clearSearchResults();
+                                    document.body.style.overflow = '';
+                                });
+
+                                // Search functionality
+                                searchInput.addEventListener('input', debounce(() => {
+                                    const query = searchInput.value.toLowerCase().trim();
+
+                                    if (query.length < 2) {
+                                        searchResults.classList.add('hidden');
+                                        return;
+                                    }
+
+                                    const results = Object.entries(websiteContent)
+                                        .filter(([title, data]) => {
+                                            return title.toLowerCase().includes(query) ||
+                                                data.content.toLowerCase().includes(query);
+                                        })
+                                        .map(([title, data]) => ({
+                                            title,
+                                            url: data.url,
+                                            preview: data.content
+                                        }));
+
+                                    displayResults(results);
+                                }, 300));
+
+                                // Clear search results
+                                clearSearch.addEventListener('click', clearSearchResults);
+
+                                function displayResults(results) {
+                                    resultsList.innerHTML = '';
+
+                                    if (results.length === 0) {
+                                        resultsList.innerHTML = '<li class="text-gray-400">No results found</li>';
+                                    } else {
+                                        results.forEach(result => {
+                                            const li = document.createElement('li');
+                                            li.innerHTML = `
+                            <a href="${result.url}" class="block p-3 bg-gray-600 rounded-lg hover:bg-gray-500">
+                                <div class="font-medium text-white">${result.title}</div>
+                                <div class="text-sm text-gray-300">${getPreviewText(result.preview)}</div>
+                            </a>
+                        `;
+                                            resultsList.appendChild(li);
+                                        });
+                                    }
+
+                                    searchResults.classList.remove('hidden');
+                                }
+
+                                function clearSearchResults() {
+                                    searchInput.value = '';
+                                    searchResults.classList.add('hidden');
+                                    resultsList.innerHTML = '';
+                                }
+
+                                function getPreviewText(text, maxLength = 100) {
+                                    return text.length > maxLength
+                                        ? text.substring(0, maxLength) + '...'
+                                        : text;
+                                }
+
+                                function debounce(func, wait) {
+                                    let timeout;
+                                    return function executedFunction(...args) {
+                                        const later = () => {
+                                            clearTimeout(timeout);
+                                            func(...args);
+                                        };
+                                        clearTimeout(timeout);
+                                        timeout = setTimeout(later, wait);
+                                    };
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuButton.querySelector('i');
+            const menuItems = document.getElementById('menu-items');
+            const menuLinks = menuItems.getElementsByTagName('a');
+
+            // More dropdown functionality
+            const moreMenuButton = document.getElementById('more-menu-button');
+            const moreDropdown = document.getElementById('more-dropdown');
+
+            if (moreMenuButton && moreDropdown) {
+                moreMenuButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    moreDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!moreMenuButton.contains(e.target) && !moreDropdown.contains(e.target)) {
+                        moreDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Handle responsive navigation
+            function handleResponsiveNav() {
+                const moreButton = document.querySelector('.nav-more-button');
+                const newsLink = document.querySelector('.news-link');
+                const qtricLink = document.querySelector('.qtric-link');
+                const sponsorsLink = document.querySelector('.sponsors-link');
+                const partnersLink = document.querySelector('.partners-link');
+                const programCommitteeLink = document.querySelector('.program-committee-link');
+
+                const dropdownNews = document.querySelector('.dropdown-news');
+                const dropdownQtric = document.querySelector('.dropdown-qtric');
+                const dropdownSponsors = document.querySelector('.dropdown-sponsors');
+                const dropdownPartners = document.querySelector('.dropdown-partners');
+                const dropdownProgramCommittee = document.querySelector('.dropdown-program-committee');
+
+                // Reset all visibility
+                [newsLink, qtricLink, sponsorsLink, partnersLink, programCommitteeLink].forEach(link => {
+                    if (link) link.classList.remove('hidden');
+                });
+
+                [dropdownNews, dropdownQtric, dropdownSponsors, dropdownPartners, dropdownProgramCommittee].forEach(item => {
+                    if (item) item.classList.add('hidden');
+                });
+
+                moreButton.classList.add('hidden');
+
+                // Progressive hiding based on screen width
+                if (window.innerWidth < 1400 && window.innerWidth >= 768) {
+                    moreButton.classList.remove('hidden');
+
+                    // First hide News and Media
+                    if (window.innerWidth < 1400) {
+                        newsLink.classList.add('hidden');
+                        dropdownNews.classList.remove('hidden');
+                    }
+
+                    // Then hide QTRiC
+                    if (window.innerWidth < 1300) {
+                        qtricLink.classList.add('hidden');
+                        dropdownQtric.classList.remove('hidden');
+                    }
+
+                    // Then hide Sponsors
+                    if (window.innerWidth < 1200) {
+                        sponsorsLink.classList.add('hidden');
+                        dropdownSponsors.classList.remove('hidden');
+                    }
+
+                    // Then hide Partners
+                    if (window.innerWidth < 1100) {
+                        partnersLink.classList.add('hidden');
+                        dropdownPartners.classList.remove('hidden');
+                    }
+
+                    // Finally hide Program Committee
+                    if (window.innerWidth < 1000) {
+                        programCommitteeLink.classList.add('hidden');
+                        dropdownProgramCommittee.classList.remove('hidden');
+                    }
+                }
+            }
+
+            // Run on load and resize
+            handleResponsiveNav();
+            window.addEventListener('resize', handleResponsiveNav);
+
+            // Open mobile menu with fade-in effect
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+
+                // Animate menu items one by one
+                Array.from(menuLinks).forEach((link, index) => {
+                    link.style.opacity = '0';
+                    link.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        link.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        link.style.opacity = '1';
+                        link.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            });
+
+            // Close mobile menu with fade-out effect
+            closeMenuButton.addEventListener('click', function () {
+                // Animate menu items fade out in reverse order
+                Array.from(menuLinks).reverse().forEach((link, index) => {
+                    setTimeout(() => {
+                        link.style.opacity = '0';
+                        link.style.transform = 'translateY(20px)';
+                    }, 50 * index);
+                });
+
+                // Hide menu after animation completes
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 50 * menuLinks.length + 100);
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        });
+    </script>
+
+    <main class="mx-auto">
+        <!-- Hero section -->
+        <section class="py-8 lg:py-12 container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-7xl mx-auto">
+                <!-- Left column with logo -->
+                <div class="lg:w-full flex flex-col items-center">
+                    <img src="images/quantathon-logo-full.png" alt="SEA Quantathon 2025 Logo" class="w-full max-w-lg">
+                    <div class="mt-8 text-center">
+                        <p class="text-lg italic mb-4">in collaboration with</p>
+                        <img src="images/qtric-logo.png" alt="QTRiC" class="h-auto max-w-xs mx-auto">
+                    </div>
+                </div>
+
+                <!-- Right column with details -->
+                <div class="lg:w-full lg:pl-12 mt-20">
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-8">SEA Quantathon 2025</h1>
+                    <div class="mb-6 space-y-2">
+                        <p class="text-lg"><strong>Quantathon Date:</strong> <em>3 - 5 August 2025</em></p>
+                        <p class="text-lg"><strong>Location:</strong> <em>Avani Sukhumvit Hotel, Bangkok, Thailand</em>
+                        </p>
+                    </div>
+
+                    <p class="text-xl text-purple-primary italic mb-8">Join the ultimate Quantathon today to tackle
+                        real-world challenges in Southeast Asia using quantum computing!</p>
+
+                    <ul class="space-y-6 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-2xl">&bull;</span>
+                            <p class="italic">
+                                <span>Targeted at <strong>undergraduate and graduate students</strong> in STEM, machine
+                                    learning, data science, quantum computing, social sciences, or other relevant fields
+                                    <strong>from the Southeast Asia region</strong>.</span>
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl">&bull;</span>
+                            <p class="italic">
+                                <span>Free <strong><a href="event-details.html"
+                                            class="text-purple-primary underline">2-month online training</a></strong>
+                                    on
+                                    Quantum Computing will be provided.</span>
+                            </p>
+
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl">&bull;</span>
+                            <p class="italic">
+                                <span>Registration is free and open from <strong><a href="register.html"
+                                            class="text-purple-primary underline">3 March to 18 April
+                                            2025</a></strong>.</span>
+                            </p>
+
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl">&bull;</span>
+                            <p class="italic">
+                                <span>Focuses on prototyping quantum solutions to pressing issues in <strong>healthcare
+                                        &
+                                        medicine, renewable energy, and climate change</strong>.</span>
+                            </p>
+
+                        </li>
+                        <li class="flex items-start">
+                            <p class="italic">
+                                <span class="text-2xl">&bull;</span>
+                                <span><strong>No prerequisites</strong> in quantum computing are required!</span>
+                            </p>
+
+                        </li>
+                    </ul>
+
+                    <div class="flex justify-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyTFYgh9xqvz7jZ-k852HWgMeDXyfq4tXPwfheGvyai4zDOw/viewform?usp=send_form"
+                            target="_blank"
+                            class="bg-purple-primary text-white px-8 py-4 rounded-lg hover:bg-purple-dark font-medium text-lg transition-colors">Register
+                            Now!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-7xl mx-auto">
+                <div class="lg:w-full text-center">
+                    <p class="text-lg italic mb-4">"This event is organized in conjunction with the International Year
+                        of Quantum Science and Technology (IYQ 2025)"</p>
+                    <a href="https://www.google.com/url?q=https%3A%2F%2Fquantum2025.org%2F&sa=D&sntz=1&usg=AOvVaw3NFDdl8Ga29MUzZV2Wrosw"
+                        target="_blank"
+                        class="bg-purple-primary text-white px-6 py-3 rounded-lg hover:bg-purple-dark inline-block transition-colors">Learn
+                        more</a>
+                </div>
+                <div class="lg:w-1/3 flex justify-center">
+                    <img src="images/iyq-logo.png" alt="International Year of Quantum Science and Technology"
+                        class="h-32">
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-800 mx-auto max-w-7xl my-8">
+
+        <section class="max-w-7xl mx-auto">
+            <h2 class="text-3xl text-purple-primary font-bold text-center mb-8">Let's hack the Future!</h2>
+            <div class="space-y-6 max-w-4xl mx-auto px-4">
+                <p class="text-lg ">The SEA Quantathon 2025 aims to innovate quantum computing applications for social
+                    goods, allowing us to redirect the benefits of quantum technologies towards humanity. The issues
+                    chosen are in healthcare & medicine, renewable energy, and climate change relevant to all Southeast
+                    Asia countries.</p>
+                <p class="text-lg ">Additionally, this event allows students to experience the complete tech startup
+                    cycle, including but not limited to idea formation, pitching, and prototyping solutions.</p>
+                <p class="text-lg ">Last but not least, the format of this event encourages students from different
+                    nationalities to work together, fostering and strengthening collaborations across Southeast Asia in
+                    developing a sustainable quantum ecosystem together while focusing more on potential opportunities
+                    rather than threats in quantum computing.</p>
+            </div>
+        </section>
+
+        <section class="mt-4 py-12 bg-gradient-to-r from-purple-700 via-purple-900 to-purple-900">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">What is quantum computing?</h2>
+            <div class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="images/quantum-sphere.jpg" alt="Quantum Computing Visualization" class="w-3/4">
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="space-y-6 text-white">
+                        <p class="text-lg"><strong>Quantum computing</strong> is an emerging technology that leverages
+                            the principles of quantum theory, such as the superposition of quantum states, quantum
+                            entanglement, and the no-cloning theorem, to process information in a fundamentally
+                            different way.</p>
+                        <p class="text-lg">While the true quantum advantage is still under scrutiny, early evidence has
+                            shown that quantum computers can solve certain classically intractable problems in
+                            polynomial time, process datasets larger than those that classical computers can handle, and
+                            simulate correlations in data that cannot be mimicked by classical computers.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="py-12 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-purple-primary mb-6 text-center">What are the Sustainable
+                        Development Goals (SDGs)?</h2>
+                    <div class="space-y-6">
+                        <p class="text-lg text-center">The Sustainable Development Goals (SDGs) are a collection of 17
+                            time-bound, global goals set by the United Nations (UN) to achieve peace and prosperity for
+                            people and the planet by 2030, through a series of sustainable developments across
+                            environmental, economic, and social dimensions. The SDGs emphasize inclusiveness in both
+                            national and global governance.</p>
+                        <p class="text-lg text-center">Rightfully regarded as highly ambitious, the tive
+                            vision provided by the SDGs calls for bold and tive steps. In this context, it is
+                            vital to utilize frontier technologies such as quantum computing to address issues that
+                            continue to challenge humanity.</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="images/sdg-goals.png" alt="Sustainable Development Goals" class="w-full rounded-lg">
+                    <div class="mt-6 text-center">
+                        <a href="https://www.google.com/url?q=https%3A%2F%2Fsdgs.un.org%2Fgoals&sa=D&sntz=1&usg=AOvVaw1ZClBGk0OJWeN9KiDJXuv8"
+                            target="_blank"
+                            class="bg-purple-primary text-white px-8 py-4 rounded-lg hover:bg-purple-dark inline-block transition-colors">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-800 mx-auto max-w-7xl my-8">
+
+        <section class="py-12 text-center max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-purple-primary mb-8">Innovation tracks</h2>
+            <div class="max-w-3xl mx-auto mb-12">
+                <p class="text-lg mb-4">Explore the challenges of SEA Quantathon 2025, where participants tackle
+                    real-world challenges using quantum computing.</p>
+                <p class="text-lg">Align your solutions with the SDGs to maximize impact.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <img src="images/healthcare-icon.png" alt="Healthcare & Medicine Icon"
+                        class="w-32 h-32 object-contain mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-primary">Healthcare & medicine</h3>
+                </div>
+                <div>
+                    <img src="images/climate-icon.png" alt="Climate Change Icon"
+                        class="w-32 h-32 object-contain mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-primary">Climate change</h3>
+                </div>
+                <div>
+                    <img src="images/energy-icon.png" alt="Renewable Energy Icon"
+                        class="w-32 h-32 object-contain mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-primary">Renewable energy</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark-purple text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-row items-center gap-12">
+                    <div class="w-1/2 text-center">
+                        <img src="images/prizes-illustration.png" alt="Prizes and Opportunities" class="w-1/2 mx-auto">
+                    </div>
+                    <div class="w-1/2 text-center">
+                        <h2 class="text-3xl font-bold mb-8">Prizes & Opportunities</h2>
+                        <ul class="flex flex-col text-lg inline-block text-left">
+                            <li class="items-start">
+                                <span class="text-2xl">&bull;</span> Internship and mentorship programs with quantum
+                                experts
+                            </li>
+                            <li class="items-start">
+                                <span class="text-2xl">&bull;</span> Certification and global recognition
+                            </li>
+                            <li class="items-start">
+                                <span class="text-2xl">&bull;</span> Opportunity to develop your quantum use case with
+                                industry leaders
+                            </li>
+                            <li class="items-start">
+                                <span class="text-2xl">&bull;</span> And more... To be announced!
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bottom-0 py-12 w-full bg-white">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex flex-col md:flex-row justify-between items-start">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <h3 class="text-xl font-bold mb-4 text-center">Let's connect</h3>
+                        <div class="flex justify-center space-x-4 mt-4">
+                            <a href="https://www.youtube.com/@SEAQuantathon" target="_blank"
+                                class="items-center w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-purple-primary hover:text-white transition-colors">
+                                <img src="/images/social/youtube.png" class="bg-gray-600 rounded-full">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:w-2/3 text-right">
+                        <p class="text-lg mb-4">Have questions or concerns about SEA Quantathon 2025? We're here to
+                            help—reach out anytime!</p>
+                        <p class="text-lg font-bold">Contact us : <a href="mailto:sea.quantathon@gmail.com"
+                                class="font-medium hover:text-purple-primary">sea.quantathon@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="text-center pt-6">
+                    <p class="text-gray-600">© 2025 SEA Quantathon. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
